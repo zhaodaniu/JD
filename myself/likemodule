@@ -1,0 +1,239 @@
+#!name=我的常用脚本
+#!desc=
+
+#!name=LXK9301 iOS Tasks&Cookies Module
+#!desc=iOS Tasks&Cookies 模块配置
+
+
+# Task&Cookies模块配置 By LXK9301
+# GitHub主页(https://github.com/LXK9301/jd_scripts)
+# TG讨论组 (https://t.me/JD_fruit_pet)
+# TG通知频道 (https://t.me/jdfruit)
+# Surge的Task&Cookies脚本模块地址: jd_scripts/Surge/lxk0301_Task.sgmodule.sgmodule
+
+
+[Script]
+获取多账号京东Cookie = type=http-request,pattern=^https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion,requires-body=1,max-size=0,script-path=jd_scripts/JD_extra_cookie.js,script-update-interval=0
+小米运动 = type=cron,cronexp="15 17 * * *",wake-system=1,timeout=3600,script-path=jd_scripts/backUp/xmSports.js
+小米运动获取Token = type=http-response,pattern=^https:\/\/account\.huami\.com\/v2\/client\/login, requires-body=1, max-size=0, script-path=jd_scripts/backUp/xmSports.js
+# > Bilibili
+bilibili_splash.js = type=http-response,pattern=^https?://app\.bilibili\.com/x/v\d/splash/list,script-path=https://cdn.jsdelivr.net/gh/srk24/profile@master/js/bilibili_splash.js,script-update-interval=0
+# > TestFlight
+TF_Download.js = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js,script-update-interval=0
+# NobyDa
+# > 京东
+京东 = type=cron,cronexp=0 0 0 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js,script-update-interval=0
+# > 爱奇艺
+爱奇艺 = type=cron,cronexp=5 0 0 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js,script-update-interval=0
+# > 百度贴吧
+# 打开App,点击'我的'
+百度贴吧(客户端) = type=cron,cronexp="0 0,1,2 0 * * *",script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js,script-update-interval=0
+# @chavyleung
+# > 百度签到
+# 先登录,浏览器访问一下: https://tieba.baidu.com 或者 https://tieba.baidu.com/index/
+百度签到(网页) = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js,script-update-interval=0
+# bilibili
+# 打开浏览器访问: https://www.bilibili.com 或 https://live.bilibili.com
+哔哩哔哩 = type=cron,cronexp=35 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.js,script-update-interval=0
+# 如需银瓜子转硬币，取消下方注释
+瓜子转硬币 = type=cron,cronexp=40 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.silver2coin.js,script-update-interval=0
+# 网易云音乐
+# 浏览器访问并登录: https://music.163.com/m/login
+网易云音乐 = type=cron,cronexp=0 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.js,script-update-interval=0
+# 顺丰速运
+# 打开 APP, 访问下`我的顺丰` > `去签到` (访问下`去签到`的页面即可, 不用点`签到`)
+# 打开 APP或小程序, 访问下`27周年庆`
+顺丰速运 = type=cron,cronexp=20 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.js,script-update-interval=0
+# 什么值得买
+# 浏览器访问并登录: https://zhiyou.smzdm.com/user/login
+什么值得买 = type=cron,cronexp=25 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/smzdm.js,script-update-interval=0
+# V2EX
+# 浏览器打开https://www.v2ex.com/mission/daily ，待弹出获取成功即可
+v2ex.js = type=cron,cronexp=30 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/v2ex/v2ex.js,script-update-interval=0
+# 腾讯视频
+# 1.手机浏览器访问并登录: https://film..com/
+腾讯视频 = type=cron,cronexp=35 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.js,script-update-interval=0
+# 喜马拉雅
+# 打开 APP, 访问下右下角`账号`
+喜马拉雅 = type=cron,cronexp=40 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ximalaya/ximalaya.js,script-update-interval=0
+# 网易严选
+# 打开 APP, 访问下`个人`>`每日签到`(右上角)
+// 网易严选 = type=cron,cronexp=45 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/yanxuan/yanxuan.js,script-update-interval=0
+# QQ音乐
+# 打开 APP 然后手动签到 1 次
+QQ音乐 = type=cron,cronexp=55 1 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.js,script-update-interval=0
+# 中国联通
+# 1打开 APP , 进入签到页面, 系统提示: `获取刷新链接: 成功`,然后手动签到 1 次
+# 2首页>天天抽奖, 系统提示 `2` 次: `获取Cookie: 成功 (登录抽奖)` 和 `获取Cookie: 成功 (抽奖次数)`
+中国联通 = type=cron,cronexp=20 2 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js,script-update-interval=0
+# 中国移动
+# 打开 APP , 进入签到页面, 系统提示: `获取刷新链接: 成功`,然后手动签到 1 次
+中国移动 = type=cron,cronexp=30 2 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.js
+# 美团外卖
+# 打开 APP , 进入签到页面, 系统提示: `获取刷新链接: 成功`,然后手动签到 1 次
+美团外卖 = type=cron,cronexp=35 2 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wmmeituan/wmmeituan.js,script-update-interval=0
+# 美团
+# 打开 APP , 然后手动签到 1 次, (`首页` > `红包签到`)
+美团 = type=cron,cronexp=40 2 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js,script-update-interval=0
+# 樊登读书
+# 打开 APP 手动签到一次: 访问下右下角 `我的` > `签到`
+樊登读书 = type=cron,cronexp=5 3 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/fandeng/fandeng.js,script-update-interval=0
+# 海底捞
+# 打开APP 然后手动签到 1 次
+海底捞 = type=cron,cronexp=25 3 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/haidilao/hdl.js,script-update-interval=0
+# 七猫小说
+# APP内手动日常签到(观看小视频领取奖励)和新手领福利签到以及幸运大转盘 1 次
+七猫小说 = type=cron,cronexp=40 3 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qimao/qmnovel.js,script-update-interval=0
+# 智行火车
+# 打开 APP 手动签到一次: 访问下右下角 `个人中心` > `签到`
+智行火车 = type=cron,cronexp=45 3 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zxhc/zxhc.js,script-update-interval=0
+# 其他
+# > 联通查话费流量
+# 需要自己填key
+// 联通查话费流量 = type=cron,cronexp=30 4 0 * * *,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NavePnow/Scripts/10010%2B.js,script-update-interval=0
+# > 饿了么   (By @syzzzf)
+# 打开 APP, 访问下`我的`>`签到领红包`(左上角)
+饿了么 = type=cron,cronexp=35 4 0 * * *,script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemSign.js,script-update-interval=0
+饿了么-打卡领红包 = type=cron,cronexp=35 4 0 * * *,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/elem/elemCheckIn.js
+# > 携程旅行  (By @barrymchen)
+# 打开App 点击”我的“,然后点击”我的积分“,再点击下面的”签到.任务“即可
+携程旅行 = type=cron,cronexp=45 4 0 * * *,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/ctrip.js,script-update-interval=0
+携程 小程序 = type=cron,cronexp=23 5 * * *,script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/ctrip_wx/ct_sign.js
+# > 腾讯新闻 (By 红鲤鱼与绿鲤鱼与驴 & Macsuny))
+# 打开腾讯新闻app，阅读一篇文章，右下角出现红包，倒计时结束后即可
+腾讯新闻 = type=cron,cronexp=35 0 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js,script-update-interval=0
+# > 招行信用卡(公众号) (By @iNotification)
+# 招商银行信用卡微信公众号：”领cron “0 0 0 * * *” script-path
+招行信用卡(公众号) = type=cron,cronexp=5 5 0 * * *,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/cmbchina.js,script-update-interval=0
+# > 工银e生活 (By @barrymchen)
+# App首页“欢趣签到”,手动签到1次
+工银e生活 = type=cron,cronexp=15 5 0 * * *,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/icbc_sign.js,script-update-interval=0
+# > 京东到家 (@barrymchen, @GideonSenku & @Macsuny)
+# APP登陆账号后，点击主页’签到‘,即可
+京东到家 = type=cron,cronexp=25 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jddj.js,script-update-interval=0
+# > 微信小程序-来客有礼 (By @Macsuny)
+# 微信搜索’来客有礼‘小程序,登陆京东账号，点击’领京豆->翻牌‘
+来客有礼 = type=cron,cronexp=30 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/lkyl.js,script-update-interval=0
+# > 电视家 (By @Macsuny)
+# APP登陆账号后，点击底部’赚赚‘进入签到页面,即可获取Cookie.
+电视家 = type=cron,cronexp=0 0 7,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js,script-update-interval=0
+# > 中青看点极速版 (By @Macsuny)
+# 1.进入app，签到一次,即可获取Cookie.
+# 2.阅读一篇文章，获取阅读请求body，
+# 3.在阅读文章最下面有个惊喜红包，点击获取惊喜红包请求
+# 4.激励视频获取方法: 关闭vpn，进入任务中心=>抽奖赚点击下面第一个宝箱，出现视频广告页面，然后打开vpn，等待视频播放完毕，点击点我继续领青豆，再重复一次上面操作，获取激励视频请求的body
+中青看点极速版 = type=cron,cronexp=35 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js,script-update-interval=0
+# > 微信小程序-活动抽奖 (By @makexp & @zZPiglet)
+# 打开微信小程序 进入“活动抽奖”，手动签到一次或点击“已签到”
+活动抽奖 = type=cron,cronexp=0 6 0 * * *,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/WeChatLottery_new.js
+# > 滴滴出行 (By @zZPiglet)
+# 进入"滴滴出行"，若弹出"首次写入滴滴出行 Token 成功"
+滴滴出行 = type=cron,cronexp=0 6 0 * * *,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi.js
+# > 微信小程序-喜马拉雅 (By @makexp)
+# 微信小程序 - 喜马拉雅 - 我的： 签到 “ 获取 Cookie
+微信小程序-喜马拉雅 = type=cron,cronexp=5 6 0 * * *,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/xmly_wc.js
+# > qq会员成长值签到 (By @lowking0415)
+# 手机qq进入左侧会员，滑动即可
+qq会员签到 = type=cron,cronexp=0 0 0,wake-system=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/QQVip/qqVipCheckIn.js,script-update-interval=0
+umetrip.js = type=cron,cronexp=7 0 * * *,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/umetrip/umetrip.js,script-update-interval=0
+DiDi_new.js = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js,tag=滴滴出行,type=cron,cronexp="0 1,20 * * *"
+index.js = type=cron,cronexp=29 8 * * *,script-path=https://raw.githubusercontent.com/iepngs/Script/master/ctrip/index.js,script-update-interval=0
+京东保价 = type=cron,cronexp=0 2 * * *,wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_price.js
+umetrip.js = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/umetrip/umetrip.js,type=cron,cronexp=0 0 * * *
+umetrip.js = script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/umetrip/umetrip.js,type=http-request,pattern=^https:\/\/cloud\.umetrip\.com\/gateway\/api\/web\/rest\/polite\/app\/sign\/signpageinitdata
+小米运动 = type=cron,cronexp=15 17 * * *,wake-system=1,timeout=3600,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/xmSports.js
+小米运动获取Token = type=http-response,pattern=^https:\/\/account\.huami\.com\/v2\/client\/login,requires-body=1,max-size=0,script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/xmSports.js
+
+
+^https?:\/\/iface(\d)?\.iqiyi\.com\/ url script-request-header https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
+
+[MITM]
+hostname = %APPEND% wq.jd.com, draw.jdfcloud.com, jdjoy.jd.com, account.huami.com, ifac*.iqiyi.com
+
+
+[Rule]
+DOMAIN-KEYWORD,ximalaya,DIRECT
+DOMAIN-KEYWORD,10010,DIRECT
+DOMAIN-KEYWORD,gov.cn,DIRECT
+DOMAIN-KEYWORD,tencent,DIRECT
+DOMAIN-KEYWORD,Bilibili.com,DIRECT
+DOMAIN-KEYWORD,lanhuapp.com,DIRECT
+DOMAIN-KEYWORD,bjmu.edu.cn,DIRECT
+DOMAIN-KEYWORD,doctorwork.com,DIRECT
+DOMAIN-KEYWORD,officecdn-microsoft-com.akamaized.net,DIRECT
+DOMAIN-KEYWORD,xunlei.com,DIRECT
+DOMAIN-KEYWORD,vmware.com,DIRECT
+DOMAIN-KEYWORD,doctorwork.com,DIRECT
+DOMAIN-KEYWORD,wo.cn,DIRECT
+DOMAIN-KEYWORD,live.com,DIRECT
+DOMAIN-KEYWORD,microsoft.com,DIRECT
+DOMAIN-KEYWORD,xiami.com,DIRECT
+DOMAIN-KEYWORD,unionpay.com,DIRECT
+DOMAIN-KEYWORD,OneDrive.com,DIRECT
+DOMAIN-KEYWORD,cloudconvert.com,DIRECT
+DOMAIN-KEYWORD,mytobe.cf,DIRECT
+DOMAIN-KEYWORD,1688.com,DIRECT
+DOMAIN-KEYWORD,cnki.com,DIRECT
+DOMAIN-KEYWORD,chsi.com.cn,DIRECT
+DOMAIN-KEYWORD,pingan.com,DIRECT
+DOMAIN-KEYWORD,cmbchina.com,DIRECT
+DOMAIN-KEYWORD,spdb.com,DIRECT
+DOMAIN-KEYWORD,citibank.com,DIRECT
+DOMAIN-KEYWORD,tplogin.cn,DIRECT
+DOMAIN-KEYWORD,lvmama.com,DIRECT
+DOMAIN-KEYWORD,baidu.com,DIRECT
+DOMAIN-KEYWORD,teamviewer.com,DIRECT
+DOMAIN-KEYWORD,dtdjzx.gov.cn,DIRECT
+DOMAIN-KEYWORD,Jingdong.com,DIRECT
+DOMAIN-KEYWORD,teamviewer.com,DIRECT
+DOMAIN-KEYWORD,jd.com,DIRECT
+DOMAIN-KEYWORD,mobike.com,DIRECT
+DOMAIN-KEYWORD,ofo.so,DIRECT
+DOMAIN-KEYWORD,ofo.com,DIRECT
+DOMAIN-KEYWORD,bluegogo.com,DIRECT
+DOMAIN-KEYWORD,hao123.com,DIRECT
+DOMAIN-KEYWORD,gfan.com,DIRECT
+DOMAIN-KEYWORD,alipay.com,DIRECT
+DOMAIN-KEYWORD,taobao.com,DIRECT
+DOMAIN-KEYWORD,antfortune.com,DIRECT
+DOMAIN-KEYWORD,weixin.com,DIRECT
+DOMAIN-KEYWORD,qq.com,DIRECT
+DOMAIN-KEYWORD,wechat.com,DIRECT
+DOMAIN-KEYWORD,boc.cn,DIRECT
+DOMAIN-KEYWORD,360buy.com,DIRECT
+DOMAIN-KEYWORD,bankcomm.com,DIRECT
+DOMAIN-KEYWORD,cgbchina.com,DIRECT
+DOMAIN-KEYWORD,zhihu.com,DIRECT
+DOMAIN-KEYWORD,weibo.com.cn,DIRECT
+DOMAIN-KEYWORD,163.com,DIRECT
+DOMAIN-KEYWORD,meituan.com,DIRECT
+DOMAIN-KEYWORD,58.com,DIRECT
+DOMAIN-KEYWORD,chinaunicom.com.cn,DIRECT
+DOMAIN-KEYWORD,live.cn,DIRECT
+DOMAIN-KEYWORD,outlook.com,DIRECT
+DOMAIN-KEYWORD,chinaunicom.com,DIRECT
+DOMAIN-KEYWORD,10086.com,DIRECT
+DOMAIN-KEYWORD,sina.com,DIRECT
+DOMAIN-KEYWORD,sohu.com,DIRECT
+DOMAIN-KEYWORD,hotmail.com,DIRECT
+DOMAIN-KEYWORD,126.com,DIRECT
+DOMAIN-KEYWORD,bilibili.com,DIRECT
+DOMAIN-KEYWORD,oneplusbbs.com,DIRECT
+DOMAIN-KEYWORD,coolapk.com,DIRECT
+DOMAIN-KEYWORD,iqiyi.com,DIRECT
+DOMAIN-KEYWORD,51fapiao.com,DIRECT
+DOMAIN-KEYWORD,mwee.cn,DIRECT
+DOMAIN-KEYWORD,51kahui.com,DIRECT
+DOMAIN-KEYWORD,dingtalk.com,DIRECT
+DOMAIN-KEYWORD,kuaipan01.cn,DIRECT
+DOMAIN-KEYWORD,JD.com,DIRECT
+DOMAIN-KEYWORD,amazon.cn,DIRECT
+DOMAIN-KEYWORD,58.com,DIRECT
+DOMAIN-KEYWORD,12306.cn,DIRECT
+DOMAIN-KEYWORD,dangdang.com,DIRECT
+DOMAIN-KEYWORD,ctrip.com,DIRECT
+DOMAIN-KEYWORD,qunar.com,DIRECT
+DOMAIN-KEYWORD,acfun.cn,DIRECT
+DOMAIN-KEYWORD,tower.im,DIRECT
+DOMAIN-KEYWORD,qq.com,DIRECT
+DOMAIN-KEYWORD,fapiao,DIRECT
